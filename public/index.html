@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tennis with Fanni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Tennis with Fanni</div>
+      <nav class="nav">
+        <a href="#intro">Coach</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="section hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Meet Coach Fanni</h1>
+          <p>Hi! I'm Fanni, a passionate tennis coach dedicated to helping players of all ages and levels grow their skills and love for the game. My sessions focus on technique, movement, and building confidence on court.</p>
+          <p>Join me for engaging training, friendly match play, and a welcoming community.</p>
+        </div>
+        <div class="hero-photo">
+          <div class="coach-photo" aria-label="Coach photo" title="Coach Fanni"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section events">
+      <div class="container">
+        <div class="section-header">
+          <h2>Current and Past Events</h2>
+          <p>Stories, pictures and videos from the court.</p>
+        </div>
+
+        <div id="events-grid" class="events-grid"></div>
+
+        <details class="admin-panel">
+          <summary>Owner: Add a new post</summary>
+          <form id="event-form" class="card form" enctype="multipart/form-data">
+            <label class="label">Short story text
+              <textarea name="story" id="story" rows="3" placeholder="Write a short story..." required></textarea>
+            </label>
+            <div class="form-row">
+              <label class="label">Media (image or video)
+                <input type="file" name="media" id="media" accept="image/*,video/*" required />
+              </label>
+              <label class="label">Admin Key
+                <input type="password" id="adminKey" placeholder="Enter admin key" required />
+              </label>
+            </div>
+            <button type="submit" class="btn primary">Upload Post</button>
+            <div id="event-form-status" class="status" role="status"></div>
+          </form>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Me</h2>
+          <p>Have a question or want to book a session? Send a message.</p>
+        </div>
+        <form id="contact-form" class="card form">
+          <div class="form-row">
+            <label class="label">Your name
+              <input type="text" id="name" placeholder="Name" />
+            </label>
+            <label class="label">Your email
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+          <label class="label">Message
+            <textarea id="message" rows="4" placeholder="Hi Fanni, I'd like to..." required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Send Message</button>
+          <div id="contact-form-status" class="status" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Tennis with Fanni</div>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  
+</body>
+</html>
+

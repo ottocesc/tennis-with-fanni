@@ -9,7 +9,14 @@ const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require('uuid');
 
+// Load environment variables from .env by default, and fallback to init.env if present
 dotenv.config();
+if (!process.env.ADMIN_KEY) {
+  const initEnvPath = path.join(__dirname, 'init.env');
+  if (fs.existsSync(initEnvPath)) {
+    dotenv.config({ path: initEnvPath });
+  }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;

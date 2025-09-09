@@ -45,6 +45,8 @@ body {
   font-weight: 700;
   letter-spacing: 0.2px;
 }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-logo { width: 84px; height: 84px; border-radius: 12px; object-fit: cover; }
 .nav a {
   display: inline-block;
   margin-left: 18px;
@@ -68,23 +70,7 @@ body {
 .hero-text h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 12px; }
 .hero-text p { color: var(--grey-700); }
 .hero-photo { display: flex; justify-content: center; }
-.coach-photo {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4/5;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--sand) 100%);
-  box-shadow: var(--shadow);
-  position: relative;
-}
-.coach-photo::after {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border-radius: 14px;
-  background: url('https://images.unsplash.com/photo-1542144582-1ba00456b5d5?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-  filter: saturate(0.95) contrast(1.05);
-}
+.coach-photo { width: 100%; max-width: 420px; aspect-ratio: 4/5; border-radius: 18px; object-fit: cover; box-shadow: var(--shadow); border: 8px solid #fff; }
 
 /* Cards and buttons */
 .card {

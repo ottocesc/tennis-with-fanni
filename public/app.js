@@ -88,12 +88,19 @@ function setupEventForm() {
         body: fd,
         headers: { 'x-admin-key': adminKey }
       });
-      if (!resp.ok) throw new Error('Upload failed');
+      if (!resp.ok) {
+        let msg = 'Upload failed';
+        try {
+          const data = await resp.json();
+          if (data && data.error) msg = data.error;
+        } catch {}
+        throw new Error(msg);
+      }
       status.textContent = 'Uploaded!';
       form.reset();
       loadEvents();
     } catch (err) {
-      status.textContent = 'Failed to upload. Check admin key and file type.';
+      status.textContent = 'Failed to upload: ' + (err?.message || 'Unknown error');
     }
   });
 }

@@ -1,6 +1,5 @@
 node_modules/
 .env
-uploads/
 events.json
 npm-debug.log*
 dist/
